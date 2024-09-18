@@ -1,0 +1,14 @@
+{
+  "fmt": {
+    "include": [
+      "src",
+      "options.ts",
+      "deno.jsonc",
+      "manifest.json",
+      "package.json",
+      "tsconfig.json",
+      "vite.config.js"
+    ],
+    "exclude": ["node_modules"]
+  }
+}

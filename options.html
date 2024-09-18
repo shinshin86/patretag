@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Settings</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2 {
+      color: #2c2d25;
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #eaeae9;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+    textarea {
+      height: 200px;
+    }
+    button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #4c4c00;
+      background-color: #82dfdf;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #3cabab;
+    }
+    #savedData {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #eaeae9;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tag Input Settings</h1>
+  <label for="keyInput">Key:</label>
+  <input type="text" id="keyInput">
+  <label for="inputStrings">Input Strings (one per line):</label>
+  <textarea id="inputStrings"></textarea>
+  <button id="saveButton">Save</button>
+  <h2>Saved Data</h2>
+  <div id="savedData"></div>
+  <script src="options.js"></script>
+</body>
+</html>

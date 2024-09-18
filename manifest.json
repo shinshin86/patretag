@@ -1,0 +1,35 @@
+{
+  "name": "patretag (Patreon Tag Helper)",
+  "description": "A Chrome extension to simplify tag management on Patreon creator pages.",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.patreon.com/posts/*"
+      ],
+      "js": ["src/content.ts"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "web_accessible_resources": [{
+    "resources": ["content.js"],
+    "matches": [
+      "https://www.patreon.com/*"
+    ]
+  }]
+}
