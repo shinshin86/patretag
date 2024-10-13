@@ -2,6 +2,11 @@ type Theme = "light" | "dark";
 
 const ORIGINAL_BUTTON_TEXT = "Add Tags";
 
+const TAG_CONTAINER_SELECTOR = ".sc-9896590c-1.gqRCPP";
+const TAG_INPUT_SELECTOR = 'input[data-tag="tags-auto-complete"]';
+
+const DELETE_BUTTON_CLASS_NAME = "sc-9896590c-2 fVpvJY";
+
 const styles = {
   light: {
     backgroundColor: "#ffffff",
@@ -58,7 +63,9 @@ function waitForElement(selector: string): Promise<Element> {
 }
 
 async function insertButtonOutsideForm(): Promise<void> {
-  const tagInputElement = await waitForElement(".dqimQM") as HTMLInputElement;
+  const tagInputElement = await waitForElement(
+    TAG_INPUT_SELECTOR,
+  ) as HTMLInputElement;
   if (!tagInputElement) {
     console.error("not found tag input element");
     return;
@@ -175,7 +182,7 @@ function loadDropdownOptions(select: HTMLSelectElement): void {
 
 async function addTags(inputStrings: string[]): Promise<void> {
   const tagContainer = await waitForElement(
-    ".sc-1vhg2oa-1.bMqxZS",
+    TAG_CONTAINER_SELECTOR,
   ) as HTMLElement;
   const inputField = tagContainer.querySelector("input") as HTMLInputElement;
 
@@ -194,7 +201,7 @@ async function addTags(inputStrings: string[]): Promise<void> {
     tagContent.textContent = tagText;
 
     const deleteButton = document.createElement("div");
-    deleteButton.className = "sc-1vhg2oa-2 fupygd";
+    deleteButton.className = DELETE_BUTTON_CLASS_NAME;
     deleteButton.innerHTML =
       '<span aria-hidden="true" class="sc-dkPtRN gNfasH"><svg data-tag="IconClose" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m4.76 6.88 2.294 2.295 2.294 2.295c.191.19.286.36.286.53 0 .17-.095.34-.286.53l-2.294 2.295-2.294 2.294c-.423.423-.635.742-.635 1.06 0 .32.212.638.635 1.061.423.423.741.635 1.06.635.32 0 .638-.212 1.06-.635l2.295-2.294 2.295-2.294c.19-.191.36-.286.53-.286.17 0 .34.095.53.286l2.295 2.294 2.294 2.294c.423.423.742.635 1.06.635.32 0 .639-.212 1.062-.635.422-.423.634-.741.634-1.06 0-.32-.212-.638-.634-1.061l-2.295-2.294-2.294-2.295c-.191-.19-.286-.36-.286-.53 0-.17.095-.34.286-.53l2.294-2.295 2.294-2.294c.424-.423.635-.742.635-1.06 0-.32-.212-.638-.634-1.061-.424-.423-.742-.635-1.061-.635-.32 0-.638.212-1.06.635l-2.295 2.294-2.295 2.294c-.19.191-.36.286-.53.286-.17 0-.34-.095-.53-.286L9.175 7.054 6.881 4.76c-.423-.423-.742-.635-1.06-.635-.32 0-.638.212-1.061.635-.423.423-.635.741-.635 1.06 0 .32.212.638.635 1.06"></path></svg></span>';
 
@@ -225,7 +232,7 @@ async function addTags(inputStrings: string[]): Promise<void> {
 }
 
 // Set up a MutationObserver to watch for changes in the tag container
-const tagContainer = document.querySelector(".sc-1vhg2oa-1.bMqxZS");
+const tagContainer = document.querySelector(TAG_CONTAINER_SELECTOR);
 if (tagContainer) {
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
