@@ -1,7 +1,7 @@
 {
   "name": "patretag",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Chrome extension to simplify tag management on Patreon creator pages.",
   "type": "module",
   "author": "shinshin86 <shinshin86npm@gmail.com> (https://github.com/shinshin86)",

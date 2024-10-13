@@ -1,7 +1,7 @@
 {
   "name": "patretag (Patreon Tag Helper)",
   "description": "A Chrome extension to simplify tag management on Patreon creator pages.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 3,
   "permissions": [
     "storage"
